@@ -13,6 +13,13 @@ body {
   font-size: medium;
 }
 
+/* line 160, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_music_area.scss */
+.music_area .music_field .audio_name {
+  overflow: hidden;
+  position: relative;
+  top: 15px;
+}
+
 h1,
 h2,
 h3,
@@ -761,3 +768,7 @@ section {
     font-size: 16px; } }
 
 /*=====  End of RESPONSIVE  ======*/
+
+
+
+
