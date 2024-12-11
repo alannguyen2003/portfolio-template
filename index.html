@@ -741,7 +741,7 @@
     <h3 style="text-align: center;">Những điều muốn nhắn gửi</h3>
 
     <div class="container">
-      <form id="form" method="post">
+      <form id="form">
         <label for="email">Email</label><br>
         <input type="email" id="email" name="email" placeholder="Your email..">
         <br>
@@ -749,7 +749,7 @@
         <input type="text" id="title" name="title" placeholder="Your title..">
 
         <label for="content">Nội dung</label>
-        <textarea id="content" name="content" placeholder="Write something.." style="height:200px"></textarea>
+        <textarea id="content" name="content" maxlength="100" placeholder="Write something.." style="height:200px"></textarea>
 
         <input type="submit" value="Submit">
       </form>
@@ -826,6 +826,19 @@
         alert('Bạn đã nhận được email từ: ' + email + 
               ' với tiêu đề: ' + title + 
               ' nội dung là: ' + content);
+        const apiUrl = 'https://trigger.macrodroid.com/8398e046-22fa-4ea7-9f6b-4659c94ed611/hdntsendsms?phone=0835728081&message=' + 
+              'Bạn đã nhận được email từ: ' + email + 
+              ' với tiêu đề: ' + title + 
+              ' nội dung là: ' + content;
+
+        fetch(apiUrl) 
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            console.log(response)
+            return response;
+          })
       })
     </script>
   </body>
